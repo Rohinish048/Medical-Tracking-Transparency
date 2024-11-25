@@ -1,0 +1,41 @@
+{
+  "extends": [
+    "airbnb",
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "plugin:@next/next/recommended"
+  ],
+  "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "import/no-extraneous-dependencies": ["off"]
+  },
+
+  "settings": {
+    "import/resolver": {
+      "typescript": {}, // this loads <rootdir>/tsconfig.json to eslint
+      "node": {
+        "extensions": [".ts", ".tsx"]
+      }
+    }
+  },
+  "overrides": [
+    {
+      "files": ["**/*.tsx"],
+      "rules": {
+        "react/prop-types": "off",
+        "react/function-component-definition": "off",
+        "react/jsx-props-no-spreading": "off"
+      }
+    }
+  ]
+}
